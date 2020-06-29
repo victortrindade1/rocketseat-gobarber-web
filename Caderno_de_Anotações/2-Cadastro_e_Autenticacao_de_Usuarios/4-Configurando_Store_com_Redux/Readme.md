@@ -38,15 +38,10 @@ export default store;
 
 ## src/store/createStore.js
 
-```javascript
-/**
- * Aqui ficam todas as criações de Store. Ficou em um arquivo separado pq vai
- * ficar mt grande, e aí o index do store ia ficar mt grande.
- *
- * Do jeito criado não faria sentido. Fará qnd precisarmos encapsular o
- * Reactotron junto.
- */
+> Aqui ficam todas as criações de Store. Ficou em um arquivo separado pq vai
+> ficar mt grande, e aí o index do store ia ficar mt grande.
 
+```javascript
 import { createStore, compose, applyMiddleware } from 'redux';
 
 export default (reducers, middlewares) => {
