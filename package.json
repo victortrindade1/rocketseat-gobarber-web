@@ -15,7 +15,8 @@
     "react-scripts": "3.4.1",
     "reactotron-react-js": "^3.3.7",
     "styled-components": "^5.1.1",
-    "unform": "^1.2.3"
+    "unform": "^1.2.3",
+    "yup": "^0.29.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
