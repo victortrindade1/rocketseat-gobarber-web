@@ -1,5 +1,18 @@
 # Autenticação
 
+<!-- TOC -->
+
+- [Autenticação](#autenticação)
+  - [src/store/modules/auth/actions.js](#srcstoremodulesauthactionsjs)
+  - [src/store/modules/auth/sagas.js](#srcstoremodulesauthsagasjs)
+  - [src/pages/SignIn/index.js](#srcpagessigninindexjs)
+  - [src/store/modules/auth/reducer.js](#srcstoremodulesauthreducerjs)
+  - [src/routes/Route.js](#srcroutesroutejs)
+  - [src/services/api.js](#srcservicesapijs)
+  - [P/ testar](#p-testar)
+
+<!-- /TOC -->
+
 ## src/store/modules/auth/actions.js
 
 Uma boa prática é colocar todas as informações da action no objeto `payload`,

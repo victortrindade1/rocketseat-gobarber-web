@@ -1,5 +1,22 @@
 # Configurando o Store com Redux
 
+<!-- TOC -->
+
+- [Configurando o Store com Redux](#configurando-o-store-com-redux)
+  - [src/store/index.js](#srcstoreindexjs)
+  - [src/store/createStore.js](#srcstorecreatestorejs)
+  - [src/store/modules/auth/reducer.js](#srcstoremodulesauthreducerjs)
+  - [src/store/modules/auth/sagas.js](#srcstoremodulesauthsagasjs)
+  - [src/store/modules/auth/actions.js](#srcstoremodulesauthactionsjs)
+  - [src/store/modules/rootSaga.js](#srcstoremodulesrootsagajs)
+  - [src/store/modules/rootReducer.js](#srcstoremodulesrootreducerjs)
+  - [src/config/ReactotronConfig.js](#srcconfigreactotronconfigjs)
+  - [src/App.js](#srcappjs)
+  - [Para testar se está funcionando](#para-testar-se-está-funcionando)
+    - [src/store/modules/auth/reducer.js](#srcstoremodulesauthreducerjs-1)
+
+<!-- /TOC -->
+
 Adicione as libs:
 
 - redux
