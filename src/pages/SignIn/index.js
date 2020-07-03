@@ -1,7 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from 'unform';
 import * as Yup from 'yup';
+
+import { signInRequest } from '~/store/modules/auth/actions';
 
 import logo from '~/assets/logo.svg';
 
@@ -13,8 +16,15 @@ const schema = Yup.object().shape({
 });
 
 function SignIn() {
-  function handleSubmit(data) {
-    console.tron.log(data);
+  const dispatch = useDispatch();
+
+  /**
+   * Eu poderia simplesmente passar apenas (...data), porém fica mt obscuro qnd lê
+   * o código. Passando apenas os dados separados (email, password), quem ler o
+   * codigo vai saber pra q q serve aquela Request.
+   */
+  function handleSubmit({ email, password }) {
+    dispatch(signInRequest(email, password));
   }
 
   return (
