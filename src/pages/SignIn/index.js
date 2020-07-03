@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from 'unform';
 import * as Yup from 'yup';
@@ -17,7 +17,7 @@ const schema = Yup.object().shape({
 
 function SignIn() {
   const dispatch = useDispatch();
-
+  const loading = useSelector((state) => state.auth.loading);
   /**
    * Eu poderia simplesmente passar apenas (...data), porém fica mt obscuro qnd lê
    * o código. Passando apenas os dados separados (email, password), quem ler o
@@ -39,7 +39,7 @@ function SignIn() {
           placeholder="Sua senha secreta"
         />
 
-        <button type="submit">Acessar</button>
+        <button type="submit">{loading ? 'Carregando...' : 'Acessar'}</button>
         <Link to="/register">Criar conta gratuita</Link>
       </Form>
     </>
