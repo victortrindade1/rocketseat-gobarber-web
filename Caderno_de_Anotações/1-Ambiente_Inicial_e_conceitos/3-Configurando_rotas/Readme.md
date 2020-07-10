@@ -8,7 +8,10 @@ mais configurações das rotas nesta pasta.
 Coloque a lib history, q vai auxiliar a navegar entre telas, inclusive com
 redux.
 
-`yarn add history`
+`yarn add history@^4.10.1`
+
+> Eu coloquei a versão aí pq em versão superior está dando erro.
+> Erro: quando redireciona, a página não renderiza.
 
 ## src/services/history.js
 
