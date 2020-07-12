@@ -1,3 +1,14 @@
+# Requisições autenticadas
+
+Vou fazer com q toda request tenha o token. Eu poderia criar de forma isolada o
+token pra cada request, podendo esquecer alguma e dar brecha de segurança. Em
+vez disso, vou criar um jeito de ter o token em toda request, porém fazendo isto
+uma única vez, setando o token no login, e armazenando o token no storage usando
+a lib `redux-persist`, já instalada antes.
+
+## src/store/modules/auth/sagas.js
+
+```diff
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 
@@ -29,7 +40,7 @@ export function* signIn({ payload }) {
       return;
     }
 
-    api.defaults.headers.Authorization = `Bearer ${token}`;
++   api.defaults.headers.Authorization = `Bearer ${token}`;
 
     yield put(signInSuccess(token, user));
 
@@ -59,19 +70,19 @@ export function* signUp({ payload }) {
   }
 }
 
-export function setToken({ payload }) {
-  if (!payload) return;
++export function setToken({ payload }) {
++  if (!payload) return;
++
++  const { token } = payload.auth;
++
++  if (token) {
++    api.defaults.headers.Authorization = `Bearer ${token}`;
++  }
++}
 
-  const { token } = payload.auth;
-
-  if (token) {
-    api.defaults.headers.Authorization = `Bearer ${token}`;
-  }
-}
-
-// A action persist/REHYDRATE vem pronta da lib redux-persist
 export default all([
-  takeLatest('persist/REHYDRATE', setToken),
++ takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
 ]);
+```
