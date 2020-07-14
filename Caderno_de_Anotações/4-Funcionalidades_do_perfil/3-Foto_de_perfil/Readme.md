@@ -29,7 +29,7 @@ function AvatarInput() {
   const { defaultValue, registerField } = useField('avatar');
 
   // Se defaultValue, então defaultValue
-  const [file, setFile] = useState(defaultValue && defaultValue.id);
+  const [fileId, setFileId] = useState(defaultValue && defaultValue.id);
   const [preview, setPreview] = useState(defaultValue && defaultValue.url);
 
   const ref = useRef();
@@ -39,7 +39,7 @@ function AvatarInput() {
       registerField({
         name: 'avatar_id',
         ref: ref.current,
-        path: 'dataset.file',
+        path: 'dataset.fileid',
       });
     }
   }, [ref, registerField]);
@@ -53,7 +53,7 @@ function AvatarInput() {
 
     const { id, url } = response.data;
 
-    setFile(id);
+    setFileId(id);
     setPreview(url);
   }
 
@@ -71,7 +71,7 @@ function AvatarInput() {
           type="file"
           id="avatar"
           accept="image/*"
-          data-file={file}
+          data-fileid={fileId}
           onChange={handleChange}
           ref={ref}
         />
