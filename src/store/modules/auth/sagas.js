@@ -69,9 +69,15 @@ export function setToken({ payload }) {
   }
 }
 
+export function signOut() {
+  // Magicamente somente com o history push pra raiz já desloga automaticamente
+  history.push('/');
+}
+
 // A action persist/REHYDRATE vem pronta da lib redux-persist
 export default all([
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
+  takeLatest('@auth/SIGN_OUT', signOut),
 ]);
