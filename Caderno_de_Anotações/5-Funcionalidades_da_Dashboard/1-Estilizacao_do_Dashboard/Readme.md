@@ -3,12 +3,12 @@
 <!-- TOC -->
 
 - [Estilização da Dashboard](#estilização-da-dashboard)
-- [](#)
+  - [src/pages/Dashboard/index.js](#srcpagesdashboardindexjs)
   - [src/pages/Dashboard/styles.js](#srcpagesdashboardstylesjs)
 
 <!-- /TOC -->
 
-##
+## src/pages/Dashboard/index.js
 
 ```javascript
 import React from 'react';
