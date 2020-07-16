@@ -1,5 +1,8 @@
 # Estilização da Dashboard
 
+Assim vai ficar o Dashboard:
+![](img1.png)
+
 <!-- TOC -->
 
 - [Estilização da Dashboard](#estilização-da-dashboard)
