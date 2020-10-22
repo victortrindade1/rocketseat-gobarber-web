@@ -8,11 +8,14 @@ Vamos armazenar os dados do usuário, assim como o token gerado no backend.
 import { combineReducers } from 'redux';
 
 import auth from './auth/reducer';
++ import user from './user/reducer';
 
 export default combineReducers({ auth });
 ```
 
 ## src/store/modules/rootSaga.js
+
+Pelo q vi não mudou...
 
 ```diff
 import { all } from 'redux-saga/effects';
